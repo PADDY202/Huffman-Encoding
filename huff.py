@@ -1,6 +1,5 @@
 #Huffman Coding
 #Padraig Mitchell
-#13331201
 #Takes in a alphabet and each elements probability & max number for encoding
 #Uses the max number of encoding to create huffman tree of the same number of childern
 #returns a dict of each alphabet element and its code & the average length of the codes
