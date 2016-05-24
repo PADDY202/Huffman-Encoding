@@ -9,10 +9,9 @@ import node
 import levels
 import codes
 class Huff():
-		def __init__(self,d,**kwargs):
+		def __init__(self,d,**pmf):
 			self.d =d
-			self.pmf = kwargs
-			#self.pmf = {'a':0.1, 'b':0.3, 'c':0.2, 'e':0.15, 'f':0.25}
+			self.pmf = pmf
 			self.p = list(self.pmf.values())
 			self.s = list(self.pmf.keys())
 			self.tree = []
@@ -81,9 +80,3 @@ class Huff():
 			print('\n'+str(self.d)+'-ary Code')
 			print('Huffman Codes:\n ' + str(self.sym_codes))
 			print('Expected code length:\n ' +str(expected_len))
-
-<<<<<<< HEAD
-#Huff(2, a =0.1, b=0.3, c=0.2, e=0.15, f=0.25)
-=======
-Huff(2, a =0.1, b=0.3, c=0.2, e=0.15, f=0.25)
->>>>>>> origin/master
