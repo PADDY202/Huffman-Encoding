@@ -12,7 +12,6 @@ import codes
 class Huff():
 		def __init__(self,d,**kwargs):
 			self.d =d
-			#if kwargs is not None
 			self.pmf = kwargs
 			#self.pmf = {'a':0.1, 'b':0.3, 'c':0.2, 'e':0.15, 'f':0.25}
 			self.p = list(self.pmf.values())
@@ -66,10 +65,9 @@ class Huff():
 				code.codes.append(self.tree[0].levels[i].value)
 				
 				parent =self.tree[0].levels[i].parents
-				while(parent.p != 1):
+				while(parent.p < 0.99):
 					code.codes.append(parent.value)
-					parent = parent.parents
-					
+					parent = parent.parents					
 				code.order()
 				self.sym_codes[symbol]=code.codes
 
@@ -81,7 +79,8 @@ class Huff():
 			for i, val in enumerate(c):
 				csum = csum + len(val)
 			expected_len = csum / len(c) 
-			print('\nHuffman Codes:\n ' + str(self.sym_codes))
+			print('\n'+str(self.d)+'-ary Code')
+			print('Huffman Codes:\n ' + str(self.sym_codes))
 			print('Expected code length:\n ' +str(expected_len))
 
-Huff(2, a =0.1, b=0.3, c=0.2, e=0.15, f=0.25)
+#Huff(2, a =0.1, b=0.3, c=0.2, e=0.15, f=0.25)
