@@ -1,6 +1,5 @@
 #Huffman Coding
 #Padraig Mitchell
-#13331201
 #Takes in a alphabet and each elements probability & max number for encoding
 #Uses the max number of encoding to create huffman tree of the same number of childern
 #returns a dict of each alphabet element and its code & the average length of the codes
@@ -83,4 +82,8 @@ class Huff():
 			print('Huffman Codes:\n ' + str(self.sym_codes))
 			print('Expected code length:\n ' +str(expected_len))
 
+<<<<<<< HEAD
 #Huff(2, a =0.1, b=0.3, c=0.2, e=0.15, f=0.25)
+=======
+Huff(2, a =0.1, b=0.3, c=0.2, e=0.15, f=0.25)
+>>>>>>> origin/master
