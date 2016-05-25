@@ -18,6 +18,7 @@ class Huff():
 			self.maketree()
 			self.makecode()
 			self.expectedlength()
+
 			
 		# take in a list of n parents
 		def make_parent(self, n):
@@ -67,7 +68,7 @@ class Huff():
 					code.codes.append(parent.value)
 					parent = parent.parents					
 				code.order()
-				self.sym_codes[symbol]=code.codes
+				self.sym_codes[symbol]=''.join(str(v) for v in code.codes)
 
 
 		#expected length	
@@ -76,7 +77,10 @@ class Huff():
 			csum = 0
 			for i, val in enumerate(c):
 				csum = csum + len(val)
-			expected_len = csum / len(c) 
+			self.expected_len = csum / len(c) 
+			
+		def result(self):
 			print('\n'+str(self.d)+'-ary Code')
 			print('Huffman Codes:\n ' + str(self.sym_codes))
-			print('Expected code length:\n ' +str(expected_len))
+			print('Expected code length:\n ' +str(self.expected_len))
+		
